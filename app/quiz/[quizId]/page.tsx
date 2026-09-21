@@ -1,0 +1,3 @@
+import { getModuleByQuiz } from "@/lib/content";
+import QuizRunner from "@/components/QuizRunner";
+export default async function QuizPage({ params, searchParams }: { params: Promise<{ quizId: string }>; searchParams: Promise<{ mode?: string }> }) { const { quizId } = await params; const query = await searchParams; const found = getModuleByQuiz(quizId); if (!found) return <div className="page"><h1>Quiz not found</h1></div>; const questionCount = query.mode === "general" ? found.module.quiz.questions.length : 15; return <div className="page"><QuizRunner quiz={found.module.quiz} moduleId={found.module.id} questionCount={questionCount} /></div>; }

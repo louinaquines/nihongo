@@ -1,0 +1,14 @@
+export type QuestionType = "multiple_choice" | "identify" | "fill_blank" | "matching";
+export type ChoiceQuestion = { type: "multiple_choice" | "identify"; options: string[]; answer: string };
+export type FillBlankQuestion = { type: "fill_blank"; answer: string; acceptedAnswers?: string[]; placeholder?: string };
+export type MatchingQuestion = { type: "matching"; pairs: { left: string; right: string }[] };
+export type Question = { id: string; prompt: string; explanation?: string } & (ChoiceQuestion | FillBlankQuestion | MatchingQuestion);
+export type Quiz = { id: string; title: string; questions: Question[] };
+export type LearningModule = { id: string; title: string; summary: string; duration: string; content: LessonContent; quiz: Quiz };
+export type Category = { id: string; title: string; description: string; modules: LearningModule[] };
+export type Level = { id: string; title: string; description: string; categories: Category[] };
+export type QuizAnswer = string | Record<string, string>;
+export type QuizResult = { questionId: string; answer: QuizAnswer; correct: boolean };
+export type LessonExample = { japanese: string; reading: string; meaning: string; usage?: string };
+export type LessonPractice = { prompt: string; japanese?: string; answer: string; explanation: string };
+export type LessonContent = { objectives: string[]; intro: string; sections: { heading: string; body: string }[]; examples: LessonExample[]; commonMistake: string; practice: LessonPractice; takeaway: string };
