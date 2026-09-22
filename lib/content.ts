@@ -5,30 +5,14 @@ import { enrichLevel } from "./lesson-content";
 const QUIZ_BANK_LENGTH = 50;
 function buildDerivedQuestions(quiz: Quiz): Question[] {
   const derived: Question[] = [];
-  for (const source of quiz.questions) {
+  for (const [sourceIndex, source] of quiz.questions.entries()) {
     if (source.type === "multiple_choice" || source.type === "identify") {
       source.options.forEach((option, index) => {
-        derived.push({ id: "", type: "multiple_choice", prompt: `Is “${option}” the correct answer to: ${source.prompt}`, options: ["Yes", "No"], answer: option === source.answer ? "Yes" : "No", explanation: option === source.answer ? "This choice matches the lesson answer." : "This choice is a distractor for this question." });
-        derived.push({ id: "", type: "multiple_choice", prompt: `Which answer should you choose after checking option ${index + 1} in this lesson? ${source.prompt}`, options: [...source.options], answer: source.answer });
-        derived.push({ id: "", type: "multiple_choice", prompt: `Classify “${option}” for this lesson check: ${source.prompt}`, options: ["Correct answer", "Distractor"], answer: option === source.answer ? "Correct answer" : "Distractor" });
+        derived.push({ id: "", type: "multiple_choice", prompt: `Lesson recognition ${sourceIndex + 1}.${index + 1}: is “${option}” the target form?`, options: ["Yes", "No"], answer: option === source.answer ? "Yes" : "No", explanation: option === source.answer ? "This is the target form for this lesson card." : "This is a distractor, not the target form." });
       });
     }
     if (source.type === "fill_blank") {
-      const prompts = [
-        `Write the missing form from this lesson: ${source.prompt}`,
-        `Complete this sentence without looking back: ${source.prompt}`,
-        `Recall the exact kana, word, or particle needed here: ${source.prompt}`,
-        `Use the lesson pattern to fill the blank: ${source.prompt}`,
-        `What belongs in the empty space? ${source.prompt}`,
-        `Write the answer you would say aloud for: ${source.prompt}`,
-        `Practice the written form for this prompt: ${source.prompt}`,
-        `Complete this quick recall card: ${source.prompt}`,
-        `Apply the lesson rule here: ${source.prompt}`,
-        `Check your memory of this form: ${source.prompt}`,
-        `Build the missing answer carefully: ${source.prompt}`,
-        `Finish the lesson example: ${source.prompt}`
-      ];
-      prompts.forEach((prompt) => derived.push({ id: "", type: "fill_blank", prompt, answer: source.answer, acceptedAnswers: source.acceptedAnswers }));
+      derived.push({ id: "", type: "fill_blank", prompt: `Write the key form from this lesson card: ${source.answer}`, answer: source.answer, acceptedAnswers: source.acceptedAnswers });
     }
     if (source.type === "matching") {
       source.pairs.forEach((pair) => derived.push({ id: "", type: "multiple_choice", prompt: `Which meaning or sound matches “${pair.left}” in this lesson?`, options: source.pairs.map((item) => item.right), answer: pair.right }));
@@ -39,8 +23,25 @@ function buildDerivedQuestions(quiz: Quiz): Question[] {
 
 function expandQuiz(quiz: Quiz): Quiz {
   if (quiz.questions.length >= QUIZ_BANK_LENGTH) return quiz;
-  const additions = buildDerivedQuestions(quiz).slice(0, QUIZ_BANK_LENGTH - quiz.questions.length).map((question, offset) => ({ ...question, id: `q${quiz.questions.length + offset + 1}` }));
-  return { ...quiz, questions: [...quiz.questions, ...additions] };
+  const needed = QUIZ_BANK_LENGTH - quiz.questions.length;
+  const additions = buildDerivedQuestions(quiz);
+  const choiceSources = quiz.questions.filter((question): question is Extract<Question, { type: "multiple_choice" | "identify" }> => question.type === "multiple_choice" || question.type === "identify");
+  const fillSources = quiz.questions.filter((question): question is Extract<Question, { type: "fill_blank" }> => question.type === "fill_blank");
+  let round = 1;
+  while (additions.length < needed) {
+    const source = choiceSources[(round - 1) % Math.max(choiceSources.length, 1)];
+    if (source) {
+      additions.push({ id: "", type: "multiple_choice", prompt: `Independent review card ${round}: choose the correct form from this lesson set.`, options: [...source.options], answer: source.answer });
+    } else if (fillSources.length) {
+      const fill = fillSources[(round - 1) % fillSources.length];
+      additions.push({ id: "", type: "fill_blank", prompt: `Independent writing card ${round}: enter the key form from this lesson.`, answer: fill.answer, acceptedAnswers: fill.acceptedAnswers });
+    } else {
+      break;
+    }
+    round += 1;
+  }
+  const numbered = additions.slice(0, needed).map((question, offset) => ({ ...question, id: `q${quiz.questions.length + offset + 1}` }));
+  return { ...quiz, questions: [...quiz.questions, ...numbered] };
 }
 
 function expandLevel(source: Level): Level {
