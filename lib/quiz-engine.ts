@@ -25,5 +25,12 @@ export function shuffleQuestion(question: Question): Question {
 }
 
 export function selectQuizQuestions(quiz: { questions: Question[] }, count: number): Question[] {
-  return shuffleArray(quiz.questions).slice(0, Math.min(count, quiz.questions.length)).map(shuffleQuestion);
+  const seen = new Set<string>();
+  const uniqueQuestions = shuffleArray(quiz.questions).filter((question) => {
+    const key = question.prompt.trim().toLocaleLowerCase();
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+  return uniqueQuestions.slice(0, Math.min(count, uniqueQuestions.length)).map(shuffleQuestion);
 }
