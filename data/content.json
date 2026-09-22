@@ -37,704 +37,721 @@
             "questions": [
               {
                 "id": "q01",
+                "conceptKey": "vowel-u-kana",
                 "type": "identify",
                 "prompt": "Which kana makes the sound u?",
+                "explanation": "う is the kana for the u sound.",
                 "options": [
                   "あ",
                   "う",
                   "え",
                   "お"
                 ],
-                "answer": "う",
-                "explanation": "う is u.",
-                "conceptKey": "seed-01"
+                "answer": "う"
               },
               {
                 "id": "q02",
+                "conceptKey": "vowel-e-sound",
                 "type": "multiple_choice",
-                "prompt": "Which sequence is in standard vowel order?",
+                "prompt": "Which sound does the second vowel represent?",
+                "explanation": "え is read e.",
+                "options": [
+                  "a",
+                  "i",
+                  "e",
+                  "o"
+                ],
+                "answer": "e"
+              },
+              {
+                "id": "q03",
+                "conceptKey": "vowel-o-kana",
+                "type": "identify",
+                "prompt": "Which kana represents the sound o?",
+                "explanation": "お is the kana for o.",
+                "options": [
+                  "お",
+                  "う",
+                  "あ",
+                  "い"
+                ],
+                "answer": "お"
+              },
+              {
+                "id": "q04",
+                "conceptKey": "vowel-standard-order",
+                "type": "multiple_choice",
+                "prompt": "Which sequence follows the standard Japanese vowel order?",
+                "explanation": "The standard order is あ, い, う, え, お.",
                 "options": [
                   "あいうえお",
                   "あえいうお",
                   "いうえおあ",
                   "おえういあ"
                 ],
-                "answer": "あいうえお",
-                "conceptKey": "seed-02"
+                "answer": "あいうえお"
               },
               {
-                "id": "q03",
+                "id": "q05",
+                "conceptKey": "vowel-first-kana",
+                "type": "identify",
+                "prompt": "Which kana comes first in the standard vowel row?",
+                "explanation": "あ begins the vowel row.",
+                "options": [
+                  "え",
+                  "お",
+                  "あ",
+                  "う"
+                ],
+                "answer": "あ"
+              },
+              {
+                "id": "q06",
+                "conceptKey": "vowel-after-i",
+                "type": "multiple_choice",
+                "prompt": "Which vowel comes immediately after い?",
+                "explanation": "The order is あ, い, う, え, お.",
+                "options": [
+                  "あ",
+                  "え",
+                  "う",
+                  "お"
+                ],
+                "answer": "う"
+              },
+              {
+                "id": "q07",
+                "conceptKey": "vowel-before-o",
+                "type": "multiple_choice",
+                "prompt": "Which vowel comes immediately before お?",
+                "explanation": "え comes immediately before お.",
+                "options": [
+                  "う",
+                  "あ",
+                  "え",
+                  "い"
+                ],
+                "answer": "え"
+              },
+              {
+                "id": "q08",
+                "conceptKey": "vowel-middle",
+                "type": "identify",
+                "prompt": "Which vowel is in the middle of the five-vowel row?",
+                "explanation": "う is the third vowel.",
+                "options": [
+                  "い",
+                  "う",
+                  "え",
+                  "お"
+                ],
+                "answer": "う"
+              },
+              {
+                "id": "q09",
+                "conceptKey": "vowel-reverse-order",
+                "type": "multiple_choice",
+                "prompt": "Which sequence shows the five vowels in reverse order?",
+                "explanation": "Reverse order starts with お and ends with あ.",
+                "options": [
+                  "おえういあ",
+                  "あいうえお",
+                  "おうえいあ",
+                  "えおうあい"
+                ],
+                "answer": "おえういあ"
+              },
+              {
+                "id": "q10",
+                "conceptKey": "vowel-starts-u",
+                "type": "multiple_choice",
+                "prompt": "Which sequence starts with う?",
+                "explanation": "うえお starts with う.",
+                "options": [
+                  "あいう",
+                  "うえお",
+                  "いえお",
+                  "おあい"
+                ],
+                "answer": "うえお"
+              },
+              {
+                "id": "q11",
+                "conceptKey": "vowel-fill-middle",
                 "type": "fill_blank",
-                "prompt": "Complete: あ、い、う、え、___",
+                "prompt": "Complete the vowel row: あ、い、___、え、お",
+                "explanation": "う is the third item in the vowel row.",
+                "answer": "う",
+                "acceptedAnswers": [
+                  "う",
+                  "u"
+                ]
+              },
+              {
+                "id": "q12",
+                "conceptKey": "vowel-fill-first",
+                "type": "fill_blank",
+                "prompt": "Complete the vowel row: ___、い、う、え、お",
+                "explanation": "あ is the first vowel.",
+                "answer": "あ",
+                "acceptedAnswers": [
+                  "あ",
+                  "a"
+                ]
+              },
+              {
+                "id": "q13",
+                "conceptKey": "vowel-fill-last",
+                "type": "fill_blank",
+                "prompt": "Complete the vowel row: あ、い、う、え、___",
+                "explanation": "お is the final vowel.",
                 "answer": "お",
                 "acceptedAnswers": [
                   "お",
                   "o"
-                ],
-                "conceptKey": "seed-03"
+                ]
               },
               {
-                "id": "q04",
+                "id": "q14",
+                "conceptKey": "vowel-write-a",
+                "type": "fill_blank",
+                "prompt": "Write the kana for the first Japanese vowel.",
+                "explanation": "The first vowel sound a is written あ.",
+                "answer": "あ",
+                "acceptedAnswers": [
+                  "あ",
+                  "a"
+                ]
+              },
+              {
+                "id": "q15",
+                "conceptKey": "vowel-write-e",
+                "type": "fill_blank",
+                "prompt": "Write the kana for the e sound.",
+                "explanation": "The e sound is written え.",
+                "answer": "え",
+                "acceptedAnswers": [
+                  "え",
+                  "e"
+                ]
+              },
+              {
+                "id": "q16",
+                "conceptKey": "vowel-romaji-u",
+                "type": "fill_blank",
+                "prompt": "Write the romaji reading of う.",
+                "explanation": "う is read u.",
+                "answer": "u",
+                "acceptedAnswers": [
+                  "u"
+                ]
+              },
+              {
+                "id": "q17",
+                "conceptKey": "vowel-romaji-o",
+                "type": "fill_blank",
+                "prompt": "Write the kana for the romaji sound o.",
+                "explanation": "The o sound is written お.",
+                "answer": "お",
+                "acceptedAnswers": [
+                  "お",
+                  "o"
+                ]
+              },
+              {
+                "id": "q18",
+                "conceptKey": "vowel-fill-second",
+                "type": "fill_blank",
+                "prompt": "Complete the row: あ、___、う、え、お",
+                "explanation": "い is the second vowel.",
+                "answer": "い",
+                "acceptedAnswers": [
+                  "い",
+                  "i"
+                ]
+              },
+              {
+                "id": "q19",
+                "conceptKey": "vowel-word-ue-first",
+                "type": "multiple_choice",
+                "prompt": "Which kana is first in the word meaning above?",
+                "explanation": "Japanese is read from left to right, so う comes first.",
+                "options": [
+                  "う",
+                  "え",
+                  "あ",
+                  "お"
+                ],
+                "answer": "う"
+              },
+              {
+                "id": "q20",
+                "conceptKey": "vowel-word-ie-last",
+                "type": "multiple_choice",
+                "prompt": "Which kana is last in the word meaning house?",
+                "explanation": "いえ ends with え.",
+                "options": [
+                  "あ",
+                  "い",
+                  "う",
+                  "え"
+                ],
+                "answer": "え"
+              },
+              {
+                "id": "q21",
+                "conceptKey": "vowel-word-ie-meaning",
+                "type": "multiple_choice",
+                "prompt": "What does いえ mean?",
+                "explanation": "いえ means house.",
+                "options": [
+                  "house",
+                  "blue",
+                  "above",
+                  "hey"
+                ],
+                "answer": "house"
+              },
+              {
+                "id": "q22",
+                "conceptKey": "vowel-word-ao-meaning",
+                "type": "multiple_choice",
+                "prompt": "What does あお mean?",
+                "explanation": "あお means blue.",
+                "options": [
+                  "above",
+                  "blue",
+                  "house",
+                  "water"
+                ],
+                "answer": "blue"
+              },
+              {
+                "id": "q23",
+                "conceptKey": "vowel-word-ue-meaning",
+                "type": "multiple_choice",
+                "prompt": "What does うえ mean?",
+                "explanation": "うえ means above.",
+                "options": [
+                  "above",
+                  "house",
+                  "blue",
+                  "hey"
+                ],
+                "answer": "above"
+              },
+              {
+                "id": "q24",
+                "conceptKey": "vowel-word-start-a",
+                "type": "multiple_choice",
+                "prompt": "Which word begins with the a sound?",
+                "explanation": "あお begins with あ, the a sound.",
+                "options": [
+                  "あお",
+                  "いえ",
+                  "うえ",
+                  "おい"
+                ],
+                "answer": "あお"
+              },
+              {
+                "id": "q25",
+                "conceptKey": "vowel-word-end-e",
+                "type": "multiple_choice",
+                "prompt": "Which word ends with the e sound?",
+                "explanation": "いえ ends with え.",
+                "options": [
+                  "あお",
+                  "いえ",
+                  "おい",
+                  "うえ"
+                ],
+                "answer": "いえ"
+              },
+              {
+                "id": "q26",
+                "conceptKey": "vowel-word-ue-order",
+                "type": "multiple_choice",
+                "prompt": "Which word has the sounds u then e?",
+                "explanation": "うえ is read u-e.",
+                "options": [
+                  "あお",
+                  "いえ",
+                  "うえ",
+                  "おい"
+                ],
+                "answer": "うえ"
+              },
+              {
+                "id": "q27",
+                "conceptKey": "vowel-read-ao",
+                "type": "multiple_choice",
+                "prompt": "How is あお read in romaji?",
+                "explanation": "あお is read ao.",
+                "options": [
+                  "ao",
+                  "ae",
+                  "ua",
+                  "oi"
+                ],
+                "answer": "ao"
+              },
+              {
+                "id": "q28",
+                "conceptKey": "vowel-read-ie",
+                "type": "multiple_choice",
+                "prompt": "How is いえ read in romaji?",
+                "explanation": "いえ is read ie.",
+                "options": [
+                  "ai",
+                  "ie",
+                  "ue",
+                  "eo"
+                ],
+                "answer": "ie"
+              },
+              {
+                "id": "q29",
+                "conceptKey": "vowel-kana-ue",
+                "type": "identify",
+                "prompt": "Which pair of kana spells ue?",
+                "explanation": "うえ spells ue.",
+                "options": [
+                  "あお",
+                  "いえ",
+                  "うえ",
+                  "おい"
+                ],
+                "answer": "うえ"
+              },
+              {
+                "id": "q30",
+                "conceptKey": "vowel-word-start-o",
+                "type": "identify",
+                "prompt": "Which word begins with お?",
+                "explanation": "おい begins with お.",
+                "options": [
+                  "あお",
+                  "いえ",
+                  "うえ",
+                  "おい"
+                ],
+                "answer": "おい"
+              },
+              {
+                "id": "q31",
+                "conceptKey": "vowel-two-kana-ao",
+                "type": "multiple_choice",
+                "prompt": "Which option contains two vowel kana in the order a-o?",
+                "explanation": "あお contains あ followed by お.",
+                "options": [
+                  "あお",
+                  "うえ",
+                  "いえ",
+                  "おい"
+                ],
+                "answer": "あお"
+              },
+              {
+                "id": "q32",
+                "conceptKey": "vowel-not-vowel",
+                "type": "identify",
+                "prompt": "Which symbol is not one of the five basic vowel kana?",
+                "explanation": "か is a ka-row kana, not a basic vowel.",
+                "options": [
+                  "い",
+                  "お",
+                  "か",
+                  "え"
+                ],
+                "answer": "か"
+              },
+              {
+                "id": "q33",
+                "conceptKey": "vowel-three-kana-sequence",
+                "type": "multiple_choice",
+                "prompt": "Which three-kana sequence keeps the standard vowel order?",
+                "explanation": "あ, う, え stays in forward vowel order.",
+                "options": [
+                  "えおあ",
+                  "あうえ",
+                  "おいあ",
+                  "うあえ"
+                ],
+                "answer": "あうえ"
+              },
+              {
+                "id": "q34",
+                "conceptKey": "vowel-match-basic",
                 "type": "matching",
                 "prompt": "Match each kana to its sound.",
+                "explanation": "Each kana has a steady vowel sound.",
                 "pairs": [
                   {
                     "left": "あ",
                     "right": "a"
                   },
                   {
+                    "left": "い",
+                    "right": "i"
+                  },
+                  {
                     "left": "う",
                     "right": "u"
+                  }
+                ]
+              },
+              {
+                "id": "q35",
+                "conceptKey": "vowel-match-final",
+                "type": "matching",
+                "prompt": "Match the final vowel kana to its sound.",
+                "explanation": "え is e, お is o, and あ is a.",
+                "pairs": [
+                  {
+                    "left": "え",
+                    "right": "e"
                   },
                   {
                     "left": "お",
                     "right": "o"
+                  },
+                  {
+                    "left": "あ",
+                    "right": "a"
                   }
-                ],
-                "conceptKey": "seed-04"
-              },
-              {
-                "id": "q05",
-                "type": "identify",
-                "prompt": "Which kana is e?",
-                "options": [
-                  "い",
-                  "え",
-                  "お",
-                  "あ"
-                ],
-                "answer": "え",
-                "conceptKey": "seed-05"
-              },
-              {
-                "id": "q06",
-                "type": "multiple_choice",
-                "prompt": "Which option would a beginner use here? Item 6",
-                "options": [
-                  "あ",
-                  "う",
-                  "え",
-                  "お"
-                ],
-                "answer": "う",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-06"
-              },
-              {
-                "id": "q07",
-                "type": "multiple_choice",
-                "prompt": "Select the correct answer from the choices. Item 7",
-                "options": [
-                  "あいうえお",
-                  "あえいうお",
-                  "いうえおあ",
-                  "おえういあ"
-                ],
-                "answer": "あいうえお",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-07"
-              },
-              {
-                "id": "q08",
-                "type": "multiple_choice",
-                "prompt": "Which answer matches the lesson rule? Item 8",
-                "options": [
-                  "い",
-                  "え",
-                  "お",
-                  "あ"
-                ],
-                "answer": "え",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-08"
-              },
-              {
-                "id": "q09",
-                "type": "multiple_choice",
-                "prompt": "Choose the standard form from the options. Item 9",
-                "options": [
-                  "あ",
-                  "う",
-                  "え",
-                  "お"
-                ],
-                "answer": "う",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-09"
-              },
-              {
-                "id": "q10",
-                "type": "multiple_choice",
-                "prompt": "Which choice completes the practice task. Item 10",
-                "options": [
-                  "あいうえお",
-                  "あえいうお",
-                  "いうえおあ",
-                  "おえういあ"
-                ],
-                "answer": "あいうえお",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-10"
-              },
-              {
-                "id": "q11",
-                "type": "multiple_choice",
-                "prompt": "Choose the correct option for this lesson check. Item 11",
-                "options": [
-                  "い",
-                  "え",
-                  "お",
-                  "あ"
-                ],
-                "answer": "え",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-11"
-              },
-              {
-                "id": "q12",
-                "type": "multiple_choice",
-                "prompt": "Which option best fits the lesson pattern? Item 12",
-                "options": [
-                  "あ",
-                  "う",
-                  "え",
-                  "お"
-                ],
-                "answer": "う",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-12"
-              },
-              {
-                "id": "q13",
-                "type": "multiple_choice",
-                "prompt": "Select the answer that completes the exercise. Item 13",
-                "options": [
-                  "あいうえお",
-                  "あえいうお",
-                  "いうえおあ",
-                  "おえういあ"
-                ],
-                "answer": "あいうえお",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-13"
-              },
-              {
-                "id": "q14",
-                "type": "multiple_choice",
-                "prompt": "Which choice follows the Japanese pattern? Item 14",
-                "options": [
-                  "い",
-                  "え",
-                  "お",
-                  "あ"
-                ],
-                "answer": "え",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-14"
-              },
-              {
-                "id": "q15",
-                "type": "multiple_choice",
-                "prompt": "Choose the form that belongs in this lesson. Item 15",
-                "options": [
-                  "あ",
-                  "う",
-                  "え",
-                  "お"
-                ],
-                "answer": "う",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-15"
-              },
-              {
-                "id": "q16",
-                "type": "multiple_choice",
-                "prompt": "Which option would a beginner use here? Item 16",
-                "options": [
-                  "あいうえお",
-                  "あえいうお",
-                  "いうえおあ",
-                  "おえういあ"
-                ],
-                "answer": "あいうえお",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-16"
-              },
-              {
-                "id": "q17",
-                "type": "multiple_choice",
-                "prompt": "Select the correct answer from the choices. Item 17",
-                "options": [
-                  "い",
-                  "え",
-                  "お",
-                  "あ"
-                ],
-                "answer": "え",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-17"
-              },
-              {
-                "id": "q18",
-                "type": "multiple_choice",
-                "prompt": "Which answer matches the lesson rule? Item 18",
-                "options": [
-                  "あ",
-                  "う",
-                  "え",
-                  "お"
-                ],
-                "answer": "う",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-18"
-              },
-              {
-                "id": "q19",
-                "type": "multiple_choice",
-                "prompt": "Choose the standard form from the options. Item 19",
-                "options": [
-                  "あいうえお",
-                  "あえいうお",
-                  "いうえおあ",
-                  "おえういあ"
-                ],
-                "answer": "あいうえお",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-19"
-              },
-              {
-                "id": "q20",
-                "type": "multiple_choice",
-                "prompt": "Which choice completes the practice task. Item 20",
-                "options": [
-                  "い",
-                  "え",
-                  "お",
-                  "あ"
-                ],
-                "answer": "え",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-20"
-              },
-              {
-                "id": "q21",
-                "type": "multiple_choice",
-                "prompt": "Choose the correct option for this lesson check. Item 21",
-                "options": [
-                  "あ",
-                  "う",
-                  "え",
-                  "お"
-                ],
-                "answer": "う",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-21"
-              },
-              {
-                "id": "q22",
-                "type": "multiple_choice",
-                "prompt": "Which option best fits the lesson pattern? Item 22",
-                "options": [
-                  "あいうえお",
-                  "あえいうお",
-                  "いうえおあ",
-                  "おえういあ"
-                ],
-                "answer": "あいうえお",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-22"
-              },
-              {
-                "id": "q23",
-                "type": "multiple_choice",
-                "prompt": "Select the answer that completes the exercise. Item 23",
-                "options": [
-                  "い",
-                  "え",
-                  "お",
-                  "あ"
-                ],
-                "answer": "え",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-23"
-              },
-              {
-                "id": "q24",
-                "type": "multiple_choice",
-                "prompt": "Which choice follows the Japanese pattern? Item 24",
-                "options": [
-                  "あ",
-                  "う",
-                  "え",
-                  "お"
-                ],
-                "answer": "う",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-24"
-              },
-              {
-                "id": "q25",
-                "type": "multiple_choice",
-                "prompt": "Choose the form that belongs in this lesson. Item 25",
-                "options": [
-                  "あいうえお",
-                  "あえいうお",
-                  "いうえおあ",
-                  "おえういあ"
-                ],
-                "answer": "あいうえお",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-25"
-              },
-              {
-                "id": "q26",
-                "type": "multiple_choice",
-                "prompt": "Which option would a beginner use here? Item 26",
-                "options": [
-                  "い",
-                  "え",
-                  "お",
-                  "あ"
-                ],
-                "answer": "え",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-26"
-              },
-              {
-                "id": "q27",
-                "type": "multiple_choice",
-                "prompt": "Select the correct answer from the choices. Item 27",
-                "options": [
-                  "あ",
-                  "う",
-                  "え",
-                  "お"
-                ],
-                "answer": "う",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-27"
-              },
-              {
-                "id": "q28",
-                "type": "multiple_choice",
-                "prompt": "Which answer matches the lesson rule? Item 28",
-                "options": [
-                  "あいうえお",
-                  "あえいうお",
-                  "いうえおあ",
-                  "おえういあ"
-                ],
-                "answer": "あいうえお",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-28"
-              },
-              {
-                "id": "q29",
-                "type": "multiple_choice",
-                "prompt": "Choose the standard form from the options. Item 29",
-                "options": [
-                  "い",
-                  "え",
-                  "お",
-                  "あ"
-                ],
-                "answer": "え",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-29"
-              },
-              {
-                "id": "q30",
-                "type": "multiple_choice",
-                "prompt": "Which choice completes the practice task. Item 30",
-                "options": [
-                  "あ",
-                  "う",
-                  "え",
-                  "お"
-                ],
-                "answer": "う",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-30"
-              },
-              {
-                "id": "q31",
-                "type": "multiple_choice",
-                "prompt": "Choose the correct option for this lesson check. Item 31",
-                "options": [
-                  "あいうえお",
-                  "あえいうお",
-                  "いうえおあ",
-                  "おえういあ"
-                ],
-                "answer": "あいうえお",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-31"
-              },
-              {
-                "id": "q32",
-                "type": "multiple_choice",
-                "prompt": "Which option best fits the lesson pattern? Item 32",
-                "options": [
-                  "い",
-                  "え",
-                  "お",
-                  "あ"
-                ],
-                "answer": "え",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-32"
-              },
-              {
-                "id": "q33",
-                "type": "multiple_choice",
-                "prompt": "Select the answer that completes the exercise. Item 33",
-                "options": [
-                  "あ",
-                  "う",
-                  "え",
-                  "お"
-                ],
-                "answer": "う",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-33"
-              },
-              {
-                "id": "q34",
-                "type": "multiple_choice",
-                "prompt": "Which choice follows the Japanese pattern? Item 34",
-                "options": [
-                  "あいうえお",
-                  "あえいうお",
-                  "いうえおあ",
-                  "おえういあ"
-                ],
-                "answer": "あいうえお",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-34"
-              },
-              {
-                "id": "q35",
-                "type": "multiple_choice",
-                "prompt": "Choose the form that belongs in this lesson. Item 35",
-                "options": [
-                  "い",
-                  "え",
-                  "お",
-                  "あ"
-                ],
-                "answer": "え",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-35"
+                ]
               },
               {
                 "id": "q36",
-                "type": "multiple_choice",
-                "prompt": "Which option would a beginner use here? Item 36",
-                "options": [
-                  "あ",
-                  "う",
-                  "え",
-                  "お"
-                ],
-                "answer": "う",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-36"
+                "conceptKey": "vowel-match-romaji",
+                "type": "matching",
+                "prompt": "Match the romaji label to the correct kana.",
+                "explanation": "The kana match their romaji sounds.",
+                "pairs": [
+                  {
+                    "left": "i",
+                    "right": "い"
+                  },
+                  {
+                    "left": "u",
+                    "right": "う"
+                  },
+                  {
+                    "left": "o",
+                    "right": "お"
+                  }
+                ]
               },
               {
                 "id": "q37",
-                "type": "multiple_choice",
-                "prompt": "Select the correct answer from the choices. Item 37",
-                "options": [
-                  "あいうえお",
-                  "あえいうお",
-                  "いうえおあ",
-                  "おえういあ"
-                ],
-                "answer": "あいうえお",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-37"
+                "conceptKey": "vowel-match-words-reading",
+                "type": "matching",
+                "prompt": "Match each word to its reading.",
+                "explanation": "These short words are read from left to right.",
+                "pairs": [
+                  {
+                    "left": "あお",
+                    "right": "ao"
+                  },
+                  {
+                    "left": "いえ",
+                    "right": "ie"
+                  },
+                  {
+                    "left": "うえ",
+                    "right": "ue"
+                  }
+                ]
               },
               {
                 "id": "q38",
-                "type": "multiple_choice",
-                "prompt": "Which answer matches the lesson rule? Item 38",
-                "options": [
-                  "い",
-                  "え",
-                  "お",
-                  "あ"
-                ],
-                "answer": "え",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-38"
+                "conceptKey": "vowel-match-words-meaning",
+                "type": "matching",
+                "prompt": "Match each word to its meaning.",
+                "explanation": "These are common beginner meanings.",
+                "pairs": [
+                  {
+                    "left": "いえ",
+                    "right": "house"
+                  },
+                  {
+                    "left": "あお",
+                    "right": "blue"
+                  },
+                  {
+                    "left": "うえ",
+                    "right": "above"
+                  }
+                ]
               },
               {
                 "id": "q39",
+                "conceptKey": "vowel-pair-both",
                 "type": "multiple_choice",
-                "prompt": "Choose the standard form from the options. Item 39",
+                "prompt": "Which pair contains only basic vowel kana?",
+                "explanation": "あ and お are both basic vowel kana.",
                 "options": [
-                  "あ",
-                  "う",
-                  "え",
-                  "お"
+                  "あお",
+                  "かお",
+                  "さえ",
+                  "たう"
                 ],
-                "answer": "う",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-39"
+                "answer": "あお"
               },
               {
                 "id": "q40",
+                "conceptKey": "vowel-forward-pair",
                 "type": "multiple_choice",
-                "prompt": "Which choice completes the practice task. Item 40",
+                "prompt": "Which pair is written in forward vowel order?",
+                "explanation": "い comes before う in the standard order.",
                 "options": [
-                  "あいうえお",
-                  "あえいうお",
-                  "いうえおあ",
-                  "おえういあ"
+                  "おあ",
+                  "えい",
+                  "いう",
+                  "うあ"
                 ],
-                "answer": "あいうえお",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-40"
+                "answer": "いう"
               },
               {
                 "id": "q41",
-                "type": "multiple_choice",
-                "prompt": "Choose the correct option for this lesson check. Item 41",
+                "conceptKey": "vowel-ue-first-sound",
+                "type": "identify",
+                "prompt": "Which sound starts the word meaning above?",
+                "explanation": "The first kana う is read u.",
                 "options": [
-                  "い",
-                  "え",
-                  "お",
-                  "あ"
+                  "a",
+                  "i",
+                  "u",
+                  "e"
                 ],
-                "answer": "え",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-41"
+                "answer": "u"
               },
               {
                 "id": "q42",
+                "conceptKey": "vowel-oi-reading",
                 "type": "multiple_choice",
-                "prompt": "Which option best fits the lesson pattern? Item 42",
+                "prompt": "How should おい be read?",
+                "explanation": "おい is read oi.",
                 "options": [
-                  "あ",
-                  "う",
-                  "え",
-                  "お"
+                  "ai",
+                  "oi",
+                  "ue",
+                  "eo"
                 ],
-                "answer": "う",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-42"
+                "answer": "oi"
               },
               {
                 "id": "q43",
-                "type": "multiple_choice",
-                "prompt": "Select the answer that completes the exercise. Item 43",
+                "conceptKey": "vowel-sound-a",
+                "type": "identify",
+                "prompt": "Which kana should you write for the sound a?",
+                "explanation": "あ represents a.",
                 "options": [
-                  "あいうえお",
-                  "あえいうお",
-                  "いうえおあ",
-                  "おえういあ"
+                  "あ",
+                  "い",
+                  "え",
+                  "お"
                 ],
-                "answer": "あいうえお",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-43"
+                "answer": "あ"
               },
               {
                 "id": "q44",
-                "type": "multiple_choice",
-                "prompt": "Which choice follows the Japanese pattern? Item 44",
+                "conceptKey": "vowel-sound-i",
+                "type": "identify",
+                "prompt": "Which kana should you write for the sound i?",
+                "explanation": "い represents i.",
                 "options": [
-                  "い",
-                  "え",
                   "お",
-                  "あ"
+                  "え",
+                  "い",
+                  "う"
                 ],
-                "answer": "え",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-44"
+                "answer": "い"
               },
               {
                 "id": "q45",
-                "type": "multiple_choice",
-                "prompt": "Choose the form that belongs in this lesson. Item 45",
+                "conceptKey": "vowel-sound-u",
+                "type": "identify",
+                "prompt": "Which kana should you write for the sound u?",
+                "explanation": "う represents u.",
                 "options": [
-                  "あ",
-                  "う",
                   "え",
+                  "う",
+                  "あ",
                   "お"
                 ],
-                "answer": "う",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-45"
+                "answer": "う"
               },
               {
                 "id": "q46",
-                "type": "multiple_choice",
-                "prompt": "Which option would a beginner use here? Item 46",
+                "conceptKey": "vowel-sound-e",
+                "type": "identify",
+                "prompt": "Which kana should you write for the sound e?",
+                "explanation": "え represents e.",
                 "options": [
-                  "あいうえお",
-                  "あえいうお",
-                  "いうえおあ",
-                  "おえういあ"
+                  "い",
+                  "お",
+                  "え",
+                  "あ"
                 ],
-                "answer": "あいうえお",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-46"
+                "answer": "え"
               },
               {
                 "id": "q47",
-                "type": "multiple_choice",
-                "prompt": "Select the correct answer from the choices. Item 47",
+                "conceptKey": "vowel-sound-o",
+                "type": "identify",
+                "prompt": "Which kana should you write for the sound o?",
+                "explanation": "お represents o.",
                 "options": [
-                  "い",
-                  "え",
+                  "う",
+                  "あ",
                   "お",
-                  "あ"
+                  "い"
                 ],
-                "answer": "え",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-47"
+                "answer": "お"
               },
               {
                 "id": "q48",
+                "conceptKey": "vowel-missing-middle",
                 "type": "multiple_choice",
-                "prompt": "Which answer matches the lesson rule? Item 48",
+                "prompt": "Which completed row is correct?",
+                "explanation": "Only the first option keeps every vowel in standard order.",
                 "options": [
-                  "あ",
-                  "う",
-                  "え",
-                  "お"
+                  "あ、い、う、え、お",
+                  "あ、う、い、え、お",
+                  "あ、い、え、う、お",
+                  "い、あ、う、え、お"
                 ],
-                "answer": "う",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-48"
+                "answer": "あ、い、う、え、お"
               },
               {
                 "id": "q49",
+                "conceptKey": "vowel-spelling-ie",
                 "type": "multiple_choice",
-                "prompt": "Choose the standard form from the options. Item 49",
+                "prompt": "Which spelling matches the sounds i-e?",
+                "explanation": "いえ is the i-e pair.",
                 "options": [
-                  "あいうえお",
-                  "あえいうお",
-                  "いうえおあ",
-                  "おえういあ"
+                  "あお",
+                  "うえ",
+                  "いえ",
+                  "おい"
                 ],
-                "answer": "あいうえお",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-49"
+                "answer": "いえ"
               },
               {
                 "id": "q50",
+                "conceptKey": "vowel-spelling-ue",
                 "type": "multiple_choice",
-                "prompt": "Which choice completes the practice task. Item 50",
+                "prompt": "Which spelling matches the sounds u-e?",
+                "explanation": "うえ is the u-e pair.",
                 "options": [
-                  "い",
-                  "え",
-                  "お",
-                  "あ"
+                  "いえ",
+                  "おい",
+                  "あお",
+                  "うえ"
                 ],
-                "answer": "え",
-                "explanation": "This question checks a distinct recognition target from the lesson.",
-                "conceptKey": "concept-50"
+                "answer": "うえ"
               }
             ]
           }
