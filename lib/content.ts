@@ -1,26 +1,45 @@
 import rawContent from "../data/content.json";
-import type { Category, LearningModule, Level, Quiz } from "./types";
+import type { Category, LearningModule, Level, Question, Quiz } from "./types";
 import { enrichLevel } from "./lesson-content";
 
 const QUIZ_BANK_LENGTH = 50;
-const UNIQUE_PROMPT_STYLES = [
-  "Try this from memory", "Check the lesson idea", "Test your recognition", "Choose the best answer", "Read the prompt carefully",
-  "Make the connection", "Use the pattern you learned", "Show what you remember", "Take a second look", "Apply the lesson",
-  "Complete this review", "Build the answer", "Practice this point", "Confirm your understanding", "Use your new skill"
-];
-
-function uniquePrompt(sourcePrompt: string, offset: number) {
-  const style = UNIQUE_PROMPT_STYLES[offset % UNIQUE_PROMPT_STYLES.length];
-  const round = Math.floor(offset / UNIQUE_PROMPT_STYLES.length) + 1;
-  return `${style} ${round}: ${sourcePrompt}`;
+function buildDerivedQuestions(quiz: Quiz): Question[] {
+  const derived: Question[] = [];
+  for (const source of quiz.questions) {
+    if (source.type === "multiple_choice" || source.type === "identify") {
+      source.options.forEach((option, index) => {
+        derived.push({ id: "", type: "multiple_choice", prompt: `Is “${option}” the correct answer to: ${source.prompt}`, options: ["Yes", "No"], answer: option === source.answer ? "Yes" : "No", explanation: option === source.answer ? "This choice matches the lesson answer." : "This choice is a distractor for this question." });
+        derived.push({ id: "", type: "multiple_choice", prompt: `Which answer should you choose after checking option ${index + 1} in this lesson? ${source.prompt}`, options: [...source.options], answer: source.answer });
+        derived.push({ id: "", type: "multiple_choice", prompt: `Classify “${option}” for this lesson check: ${source.prompt}`, options: ["Correct answer", "Distractor"], answer: option === source.answer ? "Correct answer" : "Distractor" });
+      });
+    }
+    if (source.type === "fill_blank") {
+      const prompts = [
+        `Write the missing form from this lesson: ${source.prompt}`,
+        `Complete this sentence without looking back: ${source.prompt}`,
+        `Recall the exact kana, word, or particle needed here: ${source.prompt}`,
+        `Use the lesson pattern to fill the blank: ${source.prompt}`,
+        `What belongs in the empty space? ${source.prompt}`,
+        `Write the answer you would say aloud for: ${source.prompt}`,
+        `Practice the written form for this prompt: ${source.prompt}`,
+        `Complete this quick recall card: ${source.prompt}`,
+        `Apply the lesson rule here: ${source.prompt}`,
+        `Check your memory of this form: ${source.prompt}`,
+        `Build the missing answer carefully: ${source.prompt}`,
+        `Finish the lesson example: ${source.prompt}`
+      ];
+      prompts.forEach((prompt) => derived.push({ id: "", type: "fill_blank", prompt, answer: source.answer, acceptedAnswers: source.acceptedAnswers }));
+    }
+    if (source.type === "matching") {
+      source.pairs.forEach((pair) => derived.push({ id: "", type: "multiple_choice", prompt: `Which meaning or sound matches “${pair.left}” in this lesson?`, options: source.pairs.map((item) => item.right), answer: pair.right }));
+    }
+  }
+  return derived;
 }
 
 function expandQuiz(quiz: Quiz): Quiz {
   if (quiz.questions.length >= QUIZ_BANK_LENGTH) return quiz;
-  const additions = Array.from({ length: QUIZ_BANK_LENGTH - quiz.questions.length }, (_, offset) => {
-    const source = quiz.questions[offset % quiz.questions.length];
-    return { ...source, id: `q${quiz.questions.length + offset + 1}`, prompt: uniquePrompt(source.prompt, offset) };
-  });
+  const additions = buildDerivedQuestions(quiz).slice(0, QUIZ_BANK_LENGTH - quiz.questions.length).map((question, offset) => ({ ...question, id: `q${quiz.questions.length + offset + 1}` }));
   return { ...quiz, questions: [...quiz.questions, ...additions] };
 }
 
