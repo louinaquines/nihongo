@@ -23,6 +23,8 @@ describe("N5 content catalog", () => {
       expect(lesson.content.takeaway).not.toHaveLength(0);
       expect(lesson.quiz.questions).toHaveLength(50);
       expect(new Set(lesson.quiz.questions.map((question) => question.prompt)).size).toBe(50);
+      expect(new Set(lesson.quiz.questions.map((question) => question.conceptKey)).size).toBe(50);
+      expect(lesson.quiz.questions.every((question) => !/review card|lesson card|practice item/i.test(question.prompt))).toBe(true);
     }
   });
 });
