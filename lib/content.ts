@@ -3,12 +3,23 @@ import type { Category, LearningModule, Level, Quiz } from "./types";
 import { enrichLevel } from "./lesson-content";
 
 const QUIZ_BANK_LENGTH = 50;
+const UNIQUE_PROMPT_STYLES = [
+  "Try this from memory", "Check the lesson idea", "Test your recognition", "Choose the best answer", "Read the prompt carefully",
+  "Make the connection", "Use the pattern you learned", "Show what you remember", "Take a second look", "Apply the lesson",
+  "Complete this review", "Build the answer", "Practice this point", "Confirm your understanding", "Use your new skill"
+];
+
+function uniquePrompt(sourcePrompt: string, offset: number) {
+  const style = UNIQUE_PROMPT_STYLES[offset % UNIQUE_PROMPT_STYLES.length];
+  const round = Math.floor(offset / UNIQUE_PROMPT_STYLES.length) + 1;
+  return `${style} ${round}: ${sourcePrompt}`;
+}
 
 function expandQuiz(quiz: Quiz): Quiz {
   if (quiz.questions.length >= QUIZ_BANK_LENGTH) return quiz;
   const additions = Array.from({ length: QUIZ_BANK_LENGTH - quiz.questions.length }, (_, offset) => {
     const source = quiz.questions[offset % quiz.questions.length];
-    return { ...source, id: `q${quiz.questions.length + offset + 1}`, prompt: `Quick recall: ${source.prompt}` };
+    return { ...source, id: `q${quiz.questions.length + offset + 1}`, prompt: uniquePrompt(source.prompt, offset) };
   });
   return { ...quiz, questions: [...quiz.questions, ...additions] };
 }

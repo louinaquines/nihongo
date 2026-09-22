@@ -19,6 +19,8 @@ export function validateContent(level: Level): string[] {
       if (lesson.quiz.questions.length !== 50) errors.push(`Quiz bank must have 50 questions: ${lesson.quiz.id}`);
       const questionIds = new Set<string>();
       lesson.quiz.questions.forEach((question) => { if (questionIds.has(question.id)) errors.push(`Duplicate question id: ${lesson.quiz.id}.${question.id}`); questionIds.add(question.id); });
+      const prompts = lesson.quiz.questions.map((question) => question.prompt.trim().toLocaleLowerCase());
+      if (new Set(prompts).size !== prompts.length) errors.push(`Duplicate question prompt: ${lesson.quiz.id}`);
       lesson.quiz.questions.forEach((question, index) => validateQuestion(question, `${lesson.quiz.id}.q${index + 1}`, errors));
     }
   }

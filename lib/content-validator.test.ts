@@ -22,6 +22,7 @@ describe("N5 content catalog", () => {
       expect(lesson.content.practice.answer).not.toHaveLength(0);
       expect(lesson.content.takeaway).not.toHaveLength(0);
       expect(lesson.quiz.questions).toHaveLength(50);
+      expect(new Set(lesson.quiz.questions.map((question) => question.prompt)).size).toBe(50);
     }
   });
 });
