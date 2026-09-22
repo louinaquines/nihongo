@@ -33,6 +33,8 @@ function validateQuestion(question: Question, label: string, errors: string[]) {
   if (!question.prompt.trim()) errors.push(`Missing question prompt: ${label}`);
   if ((question.type === "multiple_choice" || question.type === "identify") && (!question.options.length || !question.options.includes(question.answer))) errors.push(`Invalid choice answer: ${label}`);
   if (question.type === "fill_blank" && !question.answer.trim()) errors.push(`Missing fill answer: ${label}`);
+  const answerIsVisible = question.type !== "matching" && (/[\u3040-\u30ff\u3400-\u9fff]/.test(question.answer) || question.answer.trim().length >= 3) && question.prompt.toLocaleLowerCase().includes(question.answer.toLocaleLowerCase());
+  if (question.conceptKey.startsWith("concept-") && answerIsVisible) errors.push(`Question reveals its answer: ${label}`);
   if (question.type === "matching") {
     if (!question.pairs.length) errors.push(`Empty matching question: ${label}`);
     const right = question.pairs.map((pair) => pair.right);
